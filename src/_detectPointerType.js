@@ -1,5 +1,3 @@
-var version = "0.0.1";
-
 /**
  * PointerEvent, MSPointerEvents, TouchEvent を判定する。
  * PointerEvent と MSPointerEvents はどちらかのみ true になる。
@@ -27,12 +25,4 @@ const _detectPointerType = function _detectPointerType(root) {
     };
 };
 
-const aoy = function aoy() {
-};
-
-aoy.version = version;
-
-aoy._detectPointerType = _detectPointerType;
-aoy.pointerType = _detectPointerType();
-
-export default aoy;
+export default _detectPointerType;
