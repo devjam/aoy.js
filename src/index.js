@@ -1,3 +1,5 @@
+import "./polyfill/Element-matches"
+
 const aoy = function aoy() {
 };
 
