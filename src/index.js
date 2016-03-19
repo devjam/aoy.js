@@ -1,4 +1,5 @@
 import "./polyfill/Element-prototype-matches";
+import "./polyfill/Array-from";
 
 const aoy = function aoy() {
 };
