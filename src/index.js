@@ -18,4 +18,7 @@ aoy.eventName = _normalizeEventName();
 import noScrollFocus from "./noScrollFocus"
 aoy.noScrollFocus = noScrollFocus;
 
+import getFocusableElements from "./getFocusableElements"
+aoy.getFocusableElements = getFocusableElements;
+
 export default aoy

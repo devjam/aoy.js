@@ -158,6 +158,47 @@
         context.scroll(x, y);
     };
 
+    /**
+     * フォーカス可能な要素のセレクター文字列
+     * @type {string}
+     */
+    var focusableElementsSelectors = "a[href]:not([tabindex^=\"-\"]),\narea[href]:not([tabindex^=\"-\"]),\ninput:not([disabled]):not([tabindex^=\"-\"]),\nselect:not([disabled]):not([tabindex^=\"-\"]),\ntextarea:not([disabled]):not([tabindex^=\"-\"]),\nbutton:not([disabled]):not([tabindex^=\"-\"]),\niframe:not([tabindex^=\"-\"]),\nobject:not([tabindex^=\"-\"]),\nembed:not([tabindex^=\"-\"]),\n[tabindex]:not([tabindex^=\"-\"]),\n[contentEditable]:not([tabindex^=\"-\"]";
+
+    /**
+     * フォーカス可能な要素を全て取得する。
+     * 取得したものと除外したものの両方を返す
+     * @param {String} excludeSelectors 除外するセレクターの文字列
+     * @param {Document|Element} [context = document]
+     * @returns {{focusable: Array.<Element>, excluded: Array.<Element>}}
+     */
+    var getFocusableElements = function getFocusableElements(excludeSelectors, context) {
+        var focusableElementsAll;
+        var focusableElements = [];
+        var excludeElements = [];
+
+        context = context || document;
+        focusableElementsAll = context.querySelectorAll(focusableElementsSelectors);
+
+        if (!excludeSelectors) {
+            focusableElements = Array.from(focusableElementsAll);
+        } else {
+            var i = 0;
+            var iz = focusableElementsAll.length;
+            for (; i < iz; i = i + 1) {
+                var element = focusableElementsAll[i];
+                if (element.matches(excludeSelectors)) {
+                    excludeElements.push(element);
+                    continue;
+                }
+                focusableElements.push(element);
+            }
+        }
+        return {
+            focusable: focusableElements,
+            excluded: excludeElements
+        };
+    };
+
     var aoy = function aoy() {};
 
     aoy.version = version;
@@ -169,6 +210,8 @@
     aoy.eventName = _normalizeEventName();
 
     aoy.noScrollFocus = noScrollFocus;
+
+    aoy.getFocusableElements = getFocusableElements;
 
     return aoy;
 
