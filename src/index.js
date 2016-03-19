@@ -1,9 +1,4 @@
-/**
- * @type {Element}
- * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Element}
- */
-
-import "./polyfill/Element-matches"
+import "./polyfill/Element-prototype-matches";
 
 const aoy = function aoy() {
 };
