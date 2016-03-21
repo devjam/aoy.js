@@ -169,7 +169,7 @@ iframe:not([tabindex^="-"]),
 object:not([tabindex^="-"]),
 embed:not([tabindex^="-"]),
 [tabindex]:not([tabindex^="-"]),
-[contentEditable]:not([tabindex^="-"]`;
+[contentEditable]:not([tabindex^="-"])`;
 
 /**
  * フォーカス可能な要素を全て取得する。

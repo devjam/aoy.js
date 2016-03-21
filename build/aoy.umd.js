@@ -162,7 +162,7 @@
      * フォーカス可能な要素のセレクター文字列
      * @type {string}
      */
-    var focusableElementsSelectors = "a[href]:not([tabindex^=\"-\"]),\narea[href]:not([tabindex^=\"-\"]),\ninput:not([disabled]):not([tabindex^=\"-\"]),\nselect:not([disabled]):not([tabindex^=\"-\"]),\ntextarea:not([disabled]):not([tabindex^=\"-\"]),\nbutton:not([disabled]):not([tabindex^=\"-\"]),\niframe:not([tabindex^=\"-\"]),\nobject:not([tabindex^=\"-\"]),\nembed:not([tabindex^=\"-\"]),\n[tabindex]:not([tabindex^=\"-\"]),\n[contentEditable]:not([tabindex^=\"-\"]";
+    var focusableElementsSelectors = "a[href]:not([tabindex^=\"-\"]),\narea[href]:not([tabindex^=\"-\"]),\ninput:not([disabled]):not([tabindex^=\"-\"]),\nselect:not([disabled]):not([tabindex^=\"-\"]),\ntextarea:not([disabled]):not([tabindex^=\"-\"]),\nbutton:not([disabled]):not([tabindex^=\"-\"]),\niframe:not([tabindex^=\"-\"]),\nobject:not([tabindex^=\"-\"]),\nembed:not([tabindex^=\"-\"]),\n[tabindex]:not([tabindex^=\"-\"]),\n[contentEditable]:not([tabindex^=\"-\"])";
 
     /**
      * フォーカス可能な要素を全て取得する。
