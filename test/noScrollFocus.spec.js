@@ -16,9 +16,9 @@ describe("noScrollFocus()", () => {
     it("普通にフォーカスしたらスクロール位置は 0 より大きくなること", () => {
         var scrollY1;
         var scrollY2;
-        scrollY1 = window.scrollY;
+        scrollY1 = window.scrollY || window.pageYOffset;
         anchor.focus();
-        scrollY2 = window.scrollY;
+        scrollY2 = window.scrollY || window.pageYOffset;
         assert(scrollY1 === 0);
         assert(scrollY2 > 0);
     });
@@ -26,9 +26,9 @@ describe("noScrollFocus()", () => {
     it("noScrollFocus() でフォーカスしたらスクロール位置は 0 のままであること", () => {
         var scrollY1;
         var scrollY2;
-        scrollY1 = window.scrollY;
+        scrollY1 = window.scrollY || window.pageYOffset;
         aoy.noScrollFocus(anchor);
-        scrollY2 = window.scrollY;
+        scrollY2 = window.scrollY || window.pageYOffset;
         assert(scrollY1 === 0);
         assert(scrollY2 === 0);
     });

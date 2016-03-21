@@ -148,14 +148,12 @@
     /**
      * スクロールを発生させずに要素にフォーカスする
      * @param {Object} element フォーカスする要素
-     * @param {Object} [context = window] スクロールをロックするノード
      */
-    var noScrollFocus = function noScrollFocus(element, context) {
-        context = context || window;
-        var x = context.pageXOffset;
-        var y = context.pageYOffset;
+    var noScrollFocus = function noScrollFocus(element) {
+        var x = window.scrollX || window.pageXOffset;
+        var y = window.scrollY || window.pageYOffset;
         element.focus();
-        context.scroll(x, y);
+        window.scroll(x, y);
     };
 
     /**
