@@ -43,6 +43,10 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "karma": "node_modules/.bin/karma start",
-    "test": "npm run build & npm run karma"
+    "test": "npm run build & npm run karma",
+    "karma-win": "node_modules/.bin/karma start --browsers Chrome,Firefox,IE11,IE10,IE9",
+    "test-win": "npm run build & npm run karma-win",
+    "karma-mac": "node_modules/.bin/karma start --browsers Chrome,Safari,Firefox",
+    "test-mac": "npm run build & npm run karma-mac"
   }
 }
