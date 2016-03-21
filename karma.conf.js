@@ -36,6 +36,20 @@ module.exports = function (config) {
             //"Firefox",
             //"Safari"
         ],
+        customLaunchers: {
+            IE11: {
+                base: 'IE',
+                'x-ua-compatible': 'IE=11'
+            },
+            IE10: {
+                base: 'IE',
+                'x-ua-compatible': 'IE=10'
+            },
+            IE9: {
+                base: 'IE',
+                'x-ua-compatible': 'IE=9'
+            }
+        },
         singleRun: true,
         concurrency: Infinity
     })
